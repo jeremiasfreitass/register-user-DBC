@@ -11,6 +11,8 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     @Override
     public User save(User user) {
-        return this.userRepository.save(user);
+        User userSaved = this.userRepository.save(user);
+        //Chamar o kafka service
+        return userSaved;
     }
 }
